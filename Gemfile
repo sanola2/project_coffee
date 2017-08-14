@@ -6,6 +6,23 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'bcrypt', '~> 3.1.7'
+gem 'fog'
+# 이미지 크기 조정
+gem 'mini_magick'
+# 파일 업로드
+gem 'carrierwave', '~> 1.0'
+
+gem 'kaminari'
+# 편집창
+gem 'tinymce-rails'
+
+gem 'rails-i18n'
+gem 'devise'
+gem 'devise-i18n'
+gem 'bootstrap-sass', '~>3.3.6'
+gem 'bootstrap_form'
+gem 'devise-bootstrap-views'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
@@ -38,6 +55,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'rails_db'
   gem 'selenium-webdriver'
 end
 
