@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get 'home/detailinfo'
 
-
   devise_for :users
   root "home#main"
   resources :posts do
