@@ -1,0 +1,96 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "devise_bootstrap_views";
+@import "rails_bootstrap_forms";
+
+//universal (전체제 적용하는 css)
+
+body {
+    padding-top:80px;
+    margin-left:10px;
+}
+
+// header
+
+#logo {
+    float:left;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size:1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top:9px;
+    font-weight:bold;
+    &:hover {
+        color: #fff;
+        text-decoration:none;
+    }
+}
+
+div#menu {
+    float:left;
+    width:150px;
+    margin-right:15px;
+    margin-top: 40px;
+}
+
+div#menu nav ul li {
+    list-style:none;
+    margin-top: 15px;
+    &:hover {
+        color: #fff;
+        text-decoration:none;
+    }
+}
+
+div#line {
+    width:0.5px;
+    height:800px;
+    margin-right:20px;
+    border:1px solid black;
+    float:left;
+}
+
+.popular h3 {
+    margin:0px 450px;
+    width:200px;
+}
+
+img#popularMenu {
+    height:300px;
+    width:400px;
+    margin:50px 330px;
+    &:hover {
+        opacity:0.6;
+    }
+}
+#brandmenu .brands {
+    height:300px;
+    width:auto;
+    margin-top: 30px;
+}
+
+div.itemname p {
+    margin-left:20px;
+    margin-top:2px;
+    margin-bottom:0px;
+}
+
+#brandmenu>div>p>img {
+    width:70px;
+    height:50px;
+}
+
+div.brand {
+    width:auto;
+    height:270px;
+}
+
+div.brand img {
+    width: 170px;
+    height: 170px;
+    margin-top:25px;
+    margin-left:30px;
+}

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get 'home/main'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'home/itemlist'
+
+  get 'home/detailinfo'
+
+  devise_for :users
+  root "home#main"
+  resources :posts do
+    post "/like", to: "likes#like_toggle"
+  end
 end
