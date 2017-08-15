@@ -1,17 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
-  <body>
-    <h3>The Best Coffee</h3>
-    <div id="map"></div>
-    <script>
+
+<div class="container" style="position:absolute; top:60px;">
+  <div id="best">
+    <h2>이달의 Best Coffee</h2>
+    <div id="best-info">
+      <div class="best-coffee">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank1.png" class="rank">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
+        <p>음료이름</p>
+      </div>
+      <div class="best-coffee">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank2.png" class="rank">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
+        <p>음료이름</p>
+      </div>
+      <div class="best-coffee">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank3.png" class="rank">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
+        <p>음료이름</p>
+      </div>
+    </div>
+  </div>
+  <div id="up">
+    <h2>떠오르는 리뷰!</h2>
+    <div id ="raise-info">
+      <div class="raise-coffee">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="raise"></a>
+        <p>음료이름</p>
+      </div>
+      <div class="raise-coffee">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="raise"></a>
+        <p>음료이름</p>
+      </div>
+      <div class="raise-coffee">
+        <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="raise"></a>
+        <p>음료이름</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="height:600px; width:1100px;">
+      <h2>매장위치</h2>
+      <div id="map" style="width:400px; height:400px; float:left;"></div>
+      <div class="map-info" style="float:left">
+        <input type="text" value="1번 커피지점 위치" style=" width:270px; margin-left:150px; margin-top:50px;"><br>
+        <input type="text" value="2번 커피지점 위치" style=" width:270px; margin-left:150px; margin-top:100px;"><br>
+        <input type="text" value="3번 커피지점 위치" style=" width:270px; margin-left:150px; margin-top:100px;">
+      </div>
+      <script>
       function initMap() {
         var uluru = {lat: 37.507040, lng: 127.033747};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -24,8 +59,6 @@
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvFn-iTWJjVc_uFC8MPQwjUssg7GTg3SE&callback=initMap">
-    </script>
-  </body>
-</html>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtC8JQTzZfMZle3SdEep0lBmhYFFOECw8&callback=initMap"
+    async defer></script>
+    </div>

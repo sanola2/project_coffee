@@ -9,8 +9,107 @@ body {
     padding-top:80px;
     margin-left:10px;
 }
-
+#map {
+  height: 100%;
+}
 // header
+div#best {
+  width:1000px;
+}
+
+div#best h2 {
+  margin-left: 150px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+div#best div#best-info {
+  width:1000px;
+  height:480px;
+  margin-left:120px;
+  margin-top: 20px;
+}
+
+div#best div.best-coffee {
+  width:300px;
+  height:auto;
+  float:left;
+  margin-left:30px;
+}
+
+div#best div.best-coffee img.rank {
+  width:120px;
+  height:130px;
+}
+
+div#best div.best-coffee img.bestitem {
+  width:200px;
+  height:200px;
+}
+
+div#best div.best-coffee a {
+  width:0px;
+  height:0px;
+  &:hover{
+    text-decoration: none;
+    color:#fff;
+  }
+}
+
+div#best div#best-info div.best-coffee p {
+  font-size: 18px;
+  text-align: center;
+  width:200px;
+  margin-top: 10px;
+}
+
+div#up {
+  width:1000px;
+}
+
+div#up h2 {
+  margin-left: 150px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+div#up div#raise-info {
+  width:1000px;
+  height:480px;
+  margin-left:120px;
+  margin-top: 20px;
+}
+
+div#up div.raise-coffee {
+  width:300px;
+  height:auto;
+  float:left;
+  margin-left:30px;
+}
+
+
+div#up div.raise-coffee img.raise {
+  width:200px;
+  height:200px;
+}
+
+div#up div.raise-coffee a {
+  width:0px;
+  height:0px;
+  &:hover{
+    text-decoration: none;
+    color:#fff;
+  }
+}
+
+div#up div#raise-info div.raise-coffee p {
+  font-size: 18px;
+  text-align: center;
+  width:200px;
+  margin-top: 10px;
+}
+
 
 #logo {
     float:left;

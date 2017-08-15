@@ -22,6 +22,7 @@
       <th>Content</th>
       <th>Email</th>
       <th>Likes</th>
+      <th>좋아요 갯수</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,6 +40,7 @@
           <%= link_to "좋아요", post_like_path(post), method: "post" %>
         <% end %>
         </td>
+        <td><%= post.likes.count %></td>
         <td><%= link_to 'Show', post %></td>
         <% if current_user == post.user %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
