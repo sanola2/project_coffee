@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home/itemlist'
 
   get 'home/detailinfo'
+  
   post '/tinymce_assets' => 'tinymce_assets#create'
 
   devise_for :users

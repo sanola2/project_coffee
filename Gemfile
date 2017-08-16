@@ -13,7 +13,7 @@ gem 'fog'
 # 이미지 크기 조정
 gem 'mini_magick'
 # 파일 업로드
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'kaminari'
 # 편집창
@@ -60,6 +60,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
 
   gem 'selenium-webdriver'
+
+  gem 'rails_db'
 end
 
 group :development do

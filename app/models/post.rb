@@ -5,4 +5,9 @@ class Post < ApplicationRecord
 
     has_many :likes
 
+    mount_uploader :file, ImageUploader
+
+    def self.search(query)
+      self.where("title || content LIKE ?","%#{query}%")
+    end
 end

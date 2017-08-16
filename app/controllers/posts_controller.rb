@@ -7,20 +7,22 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.all
-    @posts = Post.order(created_at: :DESC).page(params[:page]).per(10)
+    if params[:search]
+      @posts = Post.search(params[:search])
+    else
+      @posts = Post.order(created_at: :DESC).page(params[:page]).per(10)
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-
-  end  
+  end
 
 
   # GET /posts/new
   def new
     @post = Post.new
-
   end
 
   # GET /posts/1/edit
@@ -75,7 +77,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content, :file, :user_id)
     end
 
   def is_owner?

@@ -2,11 +2,11 @@ class TinymceAssetsController < ApplicationController
   def create
     # Take upload from params[:file] and store it somehow...
     # Optionally also accept params[:hint] and consume if needed
-    image = Image.create params.permit(:file, :alt, :hint)
+    post = Post.create params.permit(:file)
 
     render json: {
       image: {
-        url: image.file.url
+        url: post.file.url
       }
     }, content_type: "text/html"
   end

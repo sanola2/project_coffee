@@ -1,22 +1,36 @@
 
 <div class="container" style="position:absolute; top:60px;">
   <div id="best">
+    <% @count = [] %>
+      <% @posts.each do |post| %>
+          <% @count << post.likes.count %>
+        <% end %>
+        <% @count.sort!.reverse! %>
     <h2>이달의 Best Coffee</h2>
     <div id="best-info">
       <div class="best-coffee">
         <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank1.png" class="rank">
         <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
         <p>음료이름</p>
+        <% if @count[0] %>
+          <p>Likes <%= @count[0] %></p>
+        <% end %>
       </div>
       <div class="best-coffee">
         <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank2.png" class="rank">
         <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
         <p>음료이름</p>
+        <% if @count[1] %>
+          <p>Likes <%= @count[1] %></p>
+        <% end %>
       </div>
       <div class="best-coffee">
         <img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/rank3.png" class="rank">
         <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/coffeeinfo/uploads/americano_bback.png" class="bestitem"></a>
         <p>음료이름</p>
+        <% if @count[2] %>
+          <p>Likes <%= @count[2] %></p>
+        <% end %>
       </div>
     </div>
   </div>
