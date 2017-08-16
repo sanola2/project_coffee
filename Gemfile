@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
- gem 'bcrypt', '~> 3.1.11'
+gem 'bcrypt', '~> 3.1.11'
 gem 'fog'
 # 이미지 크기 조정
 gem 'mini_magick'

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user_id %>
+</p>
+
+<p>
+  <strong>Coffee:</strong>
+  <%= @review.coffee_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @review.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @review.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @review.image %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @review.location %>
+</p>
+
+<p>
+  <strong>Like count:</strong>
+  <%= @review.like_count %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

@@ -3,10 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :posts
-  has_many :likes
-  has_many :liked_posts, through: :likes, source: :post
-  def is_like?(post)
-    Like.find_by(user_id: self.id, post_id: post.id).present?
-  end
+
+  has_and_belongs_to_many :items
+
+  has_many :reviews
+  has_many :items, through: :reviews
+
+  # def is_like?(post)
+  #   Like.find_by(user_id: self.id, post_id: post.id).present?
+  # end
 end
