@@ -6,16 +6,19 @@ git_source(:github) do |repo_name|
 end
 
 
+
+gem "figaro"
 gem 'bcrypt', '~> 3.1.11'
 gem 'fog'
 # 이미지 크기 조정
 gem 'mini_magick'
 # 파일 업로드
 gem 'carrierwave', '~> 1.0'
-
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'kaminari'
 # 편집창
 gem 'tinymce-rails'
+
 
 gem 'rails-i18n'
 gem 'devise'
@@ -55,7 +58,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'rails_db'
+
   gem 'selenium-webdriver'
 end
 

@@ -4,4 +4,5 @@ class Post < ApplicationRecord
     has_many :liked_users, through: :likes, source: :use
 
     has_many :likes
+
 end

@@ -13,11 +13,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-  end
+
+  end  
+
 
   # GET /posts/new
   def new
     @post = Post.new
+
   end
 
   # GET /posts/1/edit
@@ -80,4 +83,5 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     end
   end
+
 end
