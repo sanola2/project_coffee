@@ -1,3 +1,4 @@
+=begin
 class ImageUploader < CarrierWave::Uploader::Base
 
     # 자료 저장방식 (AWS 연동은 'fog' 방식으로)
@@ -15,3 +16,4 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
 
 end
+=end
