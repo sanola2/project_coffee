@@ -53,7 +53,25 @@
   </div>
 
   <div class="container" style="height:600px; width:1100px;">
+
+
       <h2>매장위치</h2>
+      <div id="panel" >
+            <b>Start: </b>
+            <input type="text" id="start" />
+            <b>End: </b>
+            <input type="text" id="end" />
+            <div>
+                <strong>Mode of Travel: </strong>
+                <select id="mode">
+                <option value="DRIVING">Driving</option>
+                <option value="WALKING">Walking</option>
+                <option value="BICYCLING">Bicycling</option>
+                <option value="TRANSIT">Transit</option>
+                </select>
+                <input type="button" value="길찾기" onclick="Javascript:calcRoute();" />
+            </div>
+        </div>
       <div id="map" style="width:400px; height:400px; float:left;"></div>
       <div class="map-info" style="float:left">
         <input type="text" value="1번 커피지점 위치" style=" width:270px; margin-left:150px; margin-top:50px;"><br>
@@ -61,18 +79,52 @@
         <input type="text" value="3번 커피지점 위치" style=" width:270px; margin-left:150px; margin-top:100px;">
       </div>
       <script>
-      function initMap() {
-        var uluru = {lat: 37.507040, lng: 127.033747};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+      // 구글맵 API 사용한 거리 계산 ( 구글 API에서 수많은 기능 활용 가능 )
+    var directionsDisplay;
+    var directionsService;
+    var map;
+
+    // 해당 함수는 맨 아래의 script에서 마지막 콜백으로 넘긴 콜백함수로써 실행
+    function initialize() {
+      directionsDisplay = new google.maps.DirectionsRenderer();
+      // 서울을 중심으로 거리 계산
+      var seoul = new google.maps.LatLng(37.5665, 126.9780);
+      var mapOptions = {
+        zoom:12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: seoul
       }
+      // 지도 가져와서 display하기
+      map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      directionsDisplay.setMap(map);
+    }
+
+    // 실제 거리 계산을 위한 부분
+    function calcRoute() {
+      // 객체를 함수내에서 생성한 후에 실행해야만 하는 에러가 있었음(DirectionsService 클래스의)
+      directionsService = new google.maps.DirectionsService();
+      var start = document.getElementById('start').value;
+      var end = document.getElementById('end').value;
+      var mode = document.getElementById('mode').value;
+
+      var request = {
+          origin:start,
+          destination:end,
+          // 다양한 travlemode 방식이 존재하는데 아래와 같인 이름.DRIVING과 같이 줘야 해서 아래처럼 코딩
+          travelMode: eval("google.maps.DirectionsTravelMode."+mode)
+      };
+      directionsService.route(request, function(response, status) {
+        alert(status);
+        // 두 지점간의 경로를 구해줌
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        }
+      });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtC8JQTzZfMZle3SdEep0lBmhYFFOECw8&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtC8JQTzZfMZle3SdEep0lBmhYFFOECw8&callback=initialize"
     async defer></script>
     </div>
